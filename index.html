@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henderson ISD – Come Teach Where It Matters</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            royal: '#1a3a7a',
+            'royal-dark': '#0f2654',
+            'royal-light': '#2a4fa0',
+            crimson: '#c8102e',
+            'crimson-dark': '#a00d24',
+            cream: '#f8f6f3',
+            slate: '#2d3748'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { height: 100%; }
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      box-sizing: border-box;
+    }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+    .app-wrapper {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0f2654 0%, #1a3a7a 40%, #2a4fa0 100%);
+      position: relative;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(200,16,46,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, #f8f6f3, transparent);
+      pointer-events: none;
+    }
+
+    .highlight-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(26,58,122,0.12);
+    }
+
+    .step-connector {
+      position: absolute;
+      top: 28px;
+      left: calc(50% + 28px);
+      width: calc(100% - 56px);
+      height: 2px;
+      background: repeating-linear-gradient(
+        90deg,
+        #1a3a7a 0,
+        #1a3a7a 6px,
+        transparent 6px,
+        transparent 12px
+      );
+      opacity: 0.3;
+    }
+
+    .btn-primary {
+      background-color: #c8102e;
+      color: white;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #a00d24;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.6);
+      color: white;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
+    .media-placeholder {
+      background: linear-gradient(135deg, #0f2654, #1a3a7a);
+      position: relative;
+    }
+
+    .media-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+    }
+
+    .content-block {
+      border-left: 3px solid #c8102e;
+    }
+
+    .placeholder-label {
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 640px) {
+      .step-connector { display: none; }
+    }
+  </style>
+</head>
+
+<body class="h-full">
+  <div class="app-wrapper">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-royal-dark/95 backdrop-blur-sm border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
+        <div class="flex items-center gap-2.5">
+          <img
+            src="assets/logo.png"
+            alt="Henderson ISD logo"
+            width="32"
+            height="36"
+            class="flex-shrink-0"
+            loading="lazy"
+          >
+          <div class="text-white">
+            <div class="text-sm sm:text-base font-bold leading-tight tracking-tight">Henderson ISD</div>
+            <div class="text-[10px] sm:text-xs text-white/60 leading-tight uppercase tracking-widest">Texas</div>
+          </div>
+        </div>
+
+        <a
+          href="YOUR_EMPLOYMENT_PAGE_URL_HERE"
+          class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold"
+        >
+          Apply Now
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-24 sm:pt-32 pb-32 sm:pb-40 px-4 sm:px-6 relative">
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+
+        <!-- Replace this block with an image or video later -->
+        <div class="media-placeholder rounded-2xl overflow-hidden mb-10 sm:mb-12 aspect-video max-w-3xl mx-auto flex items-center justify-center">
+          <div class="text-center relative z-10 px-6">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/15 border-2 border-white/30 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="play" class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1"></i>
+            </div>
+            <p class="text-white text-base sm:text-lg font-semibold">Hero photo or short video goes here</p>
+            <p class="text-white/55 text-sm mt-2 placeholder-label uppercase">Placeholder section</p>
+          </div>
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-5">
+          Come Teach Where It Matters
+        </h1>
+
+        <p class="text-lg sm:text-xl text-white/75 max-w-2xl mx-auto mb-9 leading-relaxed">
+          We’re looking for teachers and staff who want to make a real difference. At Henderson ISD, relationships matter, great teaching is recognized, and students are known.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <a
+            href="YOUR_EMPLOYMENT_PAGE_URL_HERE"
+            class="btn-primary px-8 py-3.5 rounded-xl text-base font-semibold w-full sm:w-auto text-center"
+          >
+            View Open Positions
+          </a>
+
+          <a
+            href="#why"
+            class="btn-secondary px-8 py-3.5 rounded-xl text-base font-semibold w-full sm:w-auto text-center"
+          >
+            Why Henderson ISD
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Highlights -->
+      <section class="bg-cream -mt-20 relative z-10 px-4 sm:px-6 pb-16 sm:pb-20">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div class="highlight-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="w-11 h-11 rounded-lg bg-crimson/10 flex items-center justify-center mb-4">
+              <i data-lucide="dollar-sign" class="w-5 h-5 text-crimson"></i>
+            </div>
+            <h3 class="font-bold text-slate text-base mb-1.5">Competitive Pay</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Teacher Incentive Allotment eligibility is expanding to nearly 200 teachers, recognizing more outstanding educators across the district.
+            </p>
+          </div>
+
+          <div class="highlight-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="w-11 h-11 rounded-lg bg-royal/10 flex items-center justify-center mb-4">
+              <i data-lucide="shield-check" class="w-5 h-5 text-royal"></i>
+            </div>
+            <h3 class="font-bold text-slate text-base mb-1.5">Supportive Leadership</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Work alongside campus and district leaders who value relationships, communication, and strong instruction.
+            </p>
+          </div>
+
+          <div class="highlight-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="w-11 h-11 rounded-lg bg-crimson/10 flex items-center justify-center mb-4">
+              <i data-lucide="home" class="w-5 h-5 text-crimson"></i>
+            </div>
+            <h3 class="font-bold text-slate text-base mb-1.5">Strong Community</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              In Henderson, schools matter. Families and community members stay connected to the work happening in our classrooms.
+            </p>
+          </div>
+
+          <div class="highlight-card bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="w-11 h-11 rounded-lg bg-royal/10 flex items-center justify-center mb-4">
+              <i data-lucide="sparkles" class="w-5 h-5 text-royal"></i>
+            </div>
+            <h3 class="font-bold text-slate text-base mb-1.5">Real Impact</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              In a district our size, your work is seen, valued, and makes a difference every day.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why section -->
+      <section id="why" class="bg-white px-4 sm:px-6 py-16 sm:py-24">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12 sm:mb-16">
+            <p class="text-crimson font-semibold text-sm uppercase tracking-widest mb-3">Discover the Difference</p>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-royal-dark leading-tight">
+              Why Educators Choose Henderson ISD
+            </h2>
+          </div>
+
+          <!-- Replace this block with a testimonial video later -->
+          <div class="media-placeholder rounded-2xl overflow-hidden mb-14 sm:mb-16 aspect-video max-w-3xl mx-auto flex items-center justify-center">
+            <div class="text-center relative z-10 px-6">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/15 border-2 border-white/30 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="play" class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1"></i>
+              </div>
+              <p class="text-white text-base sm:text-lg font-semibold">Teacher testimonial video goes here</p>
+              <p class="text-white/55 text-sm mt-2 placeholder-label uppercase">Placeholder section</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-14 sm:mb-16">
+            <div class="content-block pl-5 py-1">
+              <h3 class="font-bold text-slate text-lg mb-2">Competitive Pay and Growth</h3>
+              <p class="text-gray-500 leading-relaxed">
+                Henderson ISD is expanding Teacher Incentive Allotment eligibility to recognize more outstanding teachers. Great teaching matters here.
+              </p>
+            </div>
+
+            <div class="content-block pl-5 py-1">
+              <h3 class="font-bold text-slate text-lg mb-2">Support for New and Experienced Teachers</h3>
+              <p class="text-gray-500 leading-relaxed">
+                Whether you are new to the profession or bringing years of experience, you will find mentorship, instructional support, and leaders who want to help you succeed.
+              </p>
+            </div>
+
+            <div class="content-block pl-5 py-1">
+              <h3 class="font-bold text-slate text-lg mb-2">A District Where You’re Known</h3>
+              <p class="text-gray-500 leading-relaxed">
+                Our size allows for strong relationships, accessible leadership, and a greater sense of connection across campuses.
+              </p>
+            </div>
+
+            <div class="content-block pl-5 py-1">
+              <h3 class="font-bold text-slate text-lg mb-2">A Community That Values Education</h3>
+              <p class="text-gray-500 leading-relaxed">
+                Henderson is a community where schools matter. Families, staff, and community members stay engaged in supporting students.
+              </p>
+            </div>
+          </div>
+
+          <div class="max-w-3xl mx-auto bg-cream rounded-2xl p-8 sm:p-10 text-center relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-crimson flex items-center justify-center">
+              <i data-lucide="quote" class="w-4 h-4 text-white"></i>
+            </div>
+
+            <blockquote class="font-display text-xl sm:text-2xl text-royal-dark leading-relaxed mb-5 italic">
+              “[Add a real quote from a current staff member here.]”
+            </blockquote>
+
+            <cite class="text-gray-500 text-sm not-italic font-medium">
+              — [Name, Role, Years at Henderson ISD]
+            </cite>
+          </div>
+        </div>
+      </section>
+
+      <!-- Join section -->
+      <section id="join" class="bg-cream px-4 sm:px-6 py-16 sm:py-24">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12 sm:mb-16">
+            <p class="text-crimson font-semibold text-sm uppercase tracking-widest mb-3">Join Us</p>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-royal-dark leading-tight">
+              Ready to Take the Next Step?
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 mb-14 sm:mb-16 max-w-3xl mx-auto">
+            <div class="text-center relative">
+              <div class="w-14 h-14 rounded-full bg-royal text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+              <div class="step-connector hidden sm:block"></div>
+              <h3 class="font-bold text-slate text-lg mb-1">Apply</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Find an open position and submit your application through our job board.
+              </p>
+            </div>
+
+            <div class="text-center relative">
+              <div class="w-14 h-14 rounded-full bg-royal text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+              <div class="step-connector hidden sm:block"></div>
+              <h3 class="font-bold text-slate text-lg mb-1">Connect</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Qualified applicants may be contacted to visit with campus or district leaders about open positions.
+              </p>
+            </div>
+
+            <div class="text-center relative">
+              <div class="w-14 h-14 rounded-full bg-crimson text-white flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+              <h3 class="font-bold text-slate text-lg mb-1">Join the Team</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Begin your next chapter in a district committed to strong schools, student success, and staff support.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 sm:p-10 mb-10 max-w-3xl mx-auto">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+              <h3 class="font-bold text-slate text-xl">Current Job Openings</h3>
+            </div>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+              Visit our employment page to view current openings and submit an application online.
+            </p>
+
+            <div class="text-center">
+              <a
+                href="YOUR_EMPLOYMENT_PAGE_URL_HERE"
+                class="text-royal font-semibold text-base hover:text-royal-light transition-colors inline-flex items-center gap-2"
+              >
+                View All Positions
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center mb-14 sm:mb-16">
+            <a
+              href="YOUR_EMPLOYMENT_PAGE_URL_HERE"
+              class="btn-primary inline-block px-10 py-4 rounded-xl text-lg font-semibold"
+            >
+              Apply Now
+            </a>
+            <p class="text-gray-400 text-sm mt-3">Applications are reviewed on a rolling basis.</p>
+          </div>
+
+          <div class="max-w-xl mx-auto text-center bg-white rounded-2xl border border-gray-100 p-8">
+            <div class="w-12 h-12 rounded-full bg-royal/10 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="mail" class="w-5 h-5 text-royal"></i>
+            </div>
+
+            <p class="text-slate font-semibold text-lg mb-2">
+              Questions? Contact our Human Resources team.
+            </p>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              We’re happy to answer questions about positions, the application process, and working at Henderson ISD.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-5">
+              <a
+                href="mailto:YOUR_HR_EMAIL_HERE"
+                class="text-royal text-sm font-semibold flex items-center gap-1.5 hover:text-royal-light transition-colors"
+              >
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                YOUR_HR_EMAIL_HERE
+              </a>
+
+              <a
+                href="tel:YOUR_HR_PHONE_HERE"
+                class="text-royal text-sm font-semibold flex items-center gap-1.5 hover:text-royal-light transition-colors"
+              >
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                YOUR_HR_PHONE_HERE
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-royal-dark px-4 sm:px-6 py-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2.5 mb-4">
+          <img
+            src="assets/logo.png"
+            alt="Henderson ISD logo"
+            width="24"
+            height="28"
+            class="flex-shrink-0"
+            loading="lazy"
+          >
+          <span class="text-white font-bold text-sm">Henderson ISD</span>
+        </div>
+
+        <p class="text-white/40 text-xs mb-4">Henderson, Texas</p>
+        <p class="text-white/30 text-[11px] leading-relaxed">
+          Equal opportunity employer. Henderson ISD does not discriminate on the basis of race, color, religion, sex, national origin, age, disability, or any other legally protected status.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
